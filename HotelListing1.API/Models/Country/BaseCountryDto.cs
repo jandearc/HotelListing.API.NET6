@@ -1,14 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HotelListing1.API.Data
+namespace HotelListing1.API.Models.Country
 {
-    public class Country
+    public abstract class BaseCountryDto
     {
         [Required]
-        public int Id { get; set; }
         public string Name { get; set; }
         public string ShortName { get; set; }
-        public virtual IList <Hotel> Hotels { get; set; }
-
     }
 }
