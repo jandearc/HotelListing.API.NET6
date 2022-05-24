@@ -4,6 +4,7 @@ using HotelListing1.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelListing1.API.Migrations
 {
     [DbContext(typeof(HotelListingDbContext))]
-    partial class HotelListingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220522112248_AddedIdentityTables")]
+    partial class AddedIdentityTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -127,8 +129,8 @@ namespace HotelListing1.API.Migrations
                         new
                         {
                             Id = 3,
-                            Name = "Cayman Island",
-                            ShortName = "CI"
+                            Name = "Cayman",
+                            ShortName = "CY"
                         });
                 });
 
@@ -162,7 +164,7 @@ namespace HotelListing1.API.Migrations
                         new
                         {
                             Id = 1,
-                            Address = "Negril",
+                            Address = "Nagril",
                             CountryId = 1,
                             Name = "Sandals",
                             Rating = 4.5
@@ -210,22 +212,6 @@ namespace HotelListing1.API.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "c71d7eb6-6118-4619-8ccc-8a4b0c4fd684",
-                            ConcurrencyStamp = "3b9d2e53-3ad6-40b8-b6f3-cb31ebf1198e",
-                            Name = "Administrator",
-                            NormalizedName = "ADMINISTRATOR"
-                        },
-                        new
-                        {
-                            Id = "67c4e9a6-289e-4a74-97a9-1acb39f7861a",
-                            ConcurrencyStamp = "e074ed06-8701-4fe0-84af-501dc692aca3",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
